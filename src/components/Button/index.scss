@@ -1,0 +1,53 @@
+@use "../../theme" as *;
+
+@mixin btnProps($btnBgColor, $btnTextColor, $btnIconColor) {
+  background-color: $btnBgColor;
+  .button_text_container {
+    color: $btnTextColor;
+  }
+  .button_icon_container {
+    svg {
+      color: $btnIconColor;
+    }
+  }
+}
+.button_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 5px;
+  transition: all 0.4s;
+  gap: 10px;
+  cursor: pointer;
+  .button_text_container {
+    font-weight: 500;
+  }
+  .button_icon_container {
+    display: flex;
+    align-items: center;
+  }
+  &.btn-primary {
+    @include btnProps($primary-color, $secondary-color, $secondary-color);
+    &:hover {
+      background-color: $secondary-color;
+      span {
+        color: $primary-color;
+      }
+      .button_icon_container {
+        svg {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+  &.btn-secondary {
+    @include btnProps($secondary-color, $primary-color, $primary-color);
+    &:hover {
+      filter: brightness(92%);
+    }
+  }
+  &.btn-black {
+    @include btnProps($black-color, $secondary-color, $secondary-color);
+  }
+}

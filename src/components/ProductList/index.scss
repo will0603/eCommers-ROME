@@ -1,0 +1,48 @@
+@use "../../theme" as *;
+.product--list--main--container {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding: 40px 10px;
+
+  .product--list--content--container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    .product--list--content--header--container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      strong {
+        font-size: 30px;
+        text-transform: uppercase;
+      }
+      .product--list--content--carrousel--buttons {
+        display: flex;
+        gap: 20px;
+        svg {
+          font-size: $medium-icon;
+          transition: all 0.2s;
+          cursor: pointer;
+          &:hover {
+            color: grey;
+          }
+        }
+      }
+    }
+    .product--list--content--carrousel--container {
+      overflow: scroll;
+      scroll-behavior: smooth;
+      scrollbar-width: none; /* Para Firefox */
+      -ms-overflow-style: none; /* Para Internet Explorer y Edge */
+      .product--list--content--carrousel {
+        display: inline-flex;
+        gap: 20px;
+      }
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}

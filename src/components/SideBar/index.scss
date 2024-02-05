@@ -1,0 +1,49 @@
+@use "../../theme.scss" as *;
+
+.sidebar_mask_container {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.sidebar_main_container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 400px;
+  z-index: 100;
+  background-color: white;
+
+  .sidebar_profile_info_container {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    padding: 20px;
+    background-color: $primary-color;
+    .sidebar_close_icon_container {
+      align-self: flex-end;
+    }
+    .sidebar_username_container {
+      color: white;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 700;
+      font-size: 35px;
+    }
+  }
+  .sidebar_navitems_container {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: all 0.3s;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    transform: translateY(-10px);
+  }
+}

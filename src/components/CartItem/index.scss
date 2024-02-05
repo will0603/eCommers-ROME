@@ -1,0 +1,51 @@
+@use "../../theme" as *;
+.cart--item--main--container {
+  display: grid;
+  grid-template-columns: 3fr 5fr;
+  column-gap: 25px;
+  .cart--item--image--container {
+    width: 100%;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .cart--item--layout--container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 12px;
+    text-transform: uppercase;
+    .cart--item--product-specs {
+      color: rgb(182, 182, 182);
+    }
+    .cart--item--cta--container {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .cart--item--cant--options {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border: 1px solid grey;
+        justify-items: center;
+        align-items: center;
+        p {
+          display: flex;
+          padding: 10px;
+          transition: all 0.3s;
+          cursor: pointer;
+          &:hover {
+            background-color: $tertiary-color;
+          }
+        }
+      }
+      .cart--item--delete--option {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@use "../../theme" as *;
+
+.cart--mask--main--container {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.cart--content--container {
+  position: fixed;
+  padding: 40px 20px;
+  height: 100%;
+  right: 0;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Para Firefox */
+  -ms-overflow-style: none; /* Para Internet Explorer y Edge */
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  width: 100%;
+  max-width: 450px;
+  background-color: white;
+  .cart--content--header--container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    svg {
+      font-size: $medium-icon;
+      cursor: pointer;
+    }
+    strong {
+      font-size: 24px;
+    }
+    span {
+      margin-left: 10px;
+    }
+  }
+  .cart--content--body--container {
+    padding: 20px 0;
+    margin: 20px 0;
+    height: 650px;
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column;
+    gap: 20px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    scrollbar-width: none; /* Para Firefox */
+    -ms-overflow-style: none; /* Para Internet Explorer y Edge */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .cart--content--footer--container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .cart--content--summary--container {
+      display: flex;
+      justify-content: space-between;
+      p {
+        font-size: 18px;
+      }
+    }
+    span {
+      font-size: 13px;
+    }
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

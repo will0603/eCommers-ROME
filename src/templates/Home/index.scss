@@ -1,0 +1,78 @@
+@use "../../theme" as *;
+.home--template--main--container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .product--card--section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .product--card--section--title {
+      margin-left: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      strong {
+        font-size: 26px;
+      }
+      svg {
+        font-size: $medium-icon;
+      }
+    }
+
+    .product--card--list--container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      place-items: center;
+      gap: 20px;
+    }
+  }
+  .home--template--diff--main--container {
+    background-color: white;
+    padding: 70px 20px;
+    display: flex;
+    justify-content: center;
+    .home--template--diff--content--container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 50px;
+      .diff--box {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        svg {
+          font-size: $big-icon;
+        }
+        strong {
+          font-size: 30px;
+        }
+        p {
+          line-height: 30px;
+          flex: 1;
+        }
+        &:first-child {
+          flex-direction: column;
+          align-items: baseline;
+          gap: 20px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: $tablet) {
+  .home--template--main--container {
+    .home--template--diff--main--container {
+      .home--template--diff--content--container {
+        display: flex;
+        flex-direction: column;
+        .diff--box {
+          flex-direction: column;
+          text-align: center;
+          &:first-child {
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}

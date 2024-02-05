@@ -1,0 +1,32 @@
+@use "../../theme.scss" as *;
+
+.sidenav_group_wrapper_main_container {
+  transition: transform 0.3s;
+  transform: translateX(0);
+  .sidenav_group_wrapper_title {
+    color: $primary-color;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px;
+    overflow: hidden;
+    border-bottom: 2px solid $secondary-color;
+    background-color: $secondary-color;
+    position: relative;
+    .sidenav_group_wrapper_back_icon {
+      display: flex;
+      align-self: center;
+      font-size: 25px;
+    }
+    .sidenav_group_wrapper_icon {
+      font-size: 150px;
+      position: absolute;
+      right: 10px;
+    }
+  }
+  &:has(.sidenavitem_dropdown_container.open) {
+    transform: translateX(-100%);
+  }
+}

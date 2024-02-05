@@ -1,0 +1,54 @@
+@use "../../theme.scss" as *;
+
+.sidenavitem_main_container {
+  cursor: pointer;
+  display: flex;
+  border-bottom: 1px solid $tertiary-color;
+  height: 60px;
+  .sidenavitem_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    .sidenavitem_content_container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      span {
+        font-weight: 500;
+      }
+      .sidenavitem_icon_container {
+        svg {
+          font-size: $medium-icon;
+          color: $primary-color;
+        }
+      }
+    }
+    .sidenavitem_dropdown_icon_container {
+      display: flex;
+      align-items: center;
+      svg {
+        font-size: $medium-icon;
+        color: $primary-color;
+      }
+    }
+  }
+  .sidenavitem_dropdown_container {
+    position: absolute;
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+    width: 100%;
+    left: 100%;
+    transition: all 0.3s;
+    &.open {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &:hover {
+    background-color: $shadow-color;
+  }
+}
