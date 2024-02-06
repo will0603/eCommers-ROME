@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useRef } from "react";
+import { MutableRefObject, useRef } from "react";
 import CategoryListItem from "../CategoryListItem";
 import PolosCt from "@assets/images/ctpolos.jpg";
 import { GrFormPreviousLink, GrFormNextLink } from "react-icons/gr";

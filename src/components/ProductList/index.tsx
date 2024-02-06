@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useRef } from "react";
+import { MutableRefObject, useRef } from "react";
 import ProductCard from "../ProductCard";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import "./index.scss";
