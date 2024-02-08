@@ -1,3 +1,4 @@
+import React from "react";
 import VideoHero from "@assets/videos/herovideo.mp4";
 import "./index.scss";
 import Button from "../Button";

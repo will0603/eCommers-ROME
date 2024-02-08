@@ -1,6 +1,6 @@
 import { MutableRefObject, useRef } from "react";
 import CategoryListItem from "../CategoryListItem";
-import PolosCt from "@assets/images/ctpolos.jpg";
+import PolosCt from "@assets/images/ctpolos.webp";
 import { GrFormPreviousLink, GrFormNextLink } from "react-icons/gr";
 import PolerasCt from "@assets/images/ctpoleras.webp";
 import PantalonesCt from "@assets/images/ctpantalones.webp";

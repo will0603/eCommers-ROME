@@ -1,0 +1,13 @@
+.login--form--main--container {
+  .login--form--header--container {
+    strong {
+      font-size: 40px;
+    }
+    margin-bottom: 40px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

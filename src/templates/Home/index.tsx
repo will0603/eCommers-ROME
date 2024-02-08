@@ -1,10 +1,12 @@
 import { TbTruckDelivery } from "react-icons/tb";
 import { MdDesignServices } from "react-icons/md";
 import { GrPaint } from "react-icons/gr";
-import "./index.scss";
 import CategoryList from "@/components/CategoryList";
 import Hero from "@/components/Hero";
 import ProductList from "@/components/ProductList";
+import { productsFake } from "@/helpers/datafake";
+import "./index.scss";
+
 const HomeTemplate = () => {
   return (
     <div className="home--template--main--container">
@@ -37,7 +39,7 @@ const HomeTemplate = () => {
           </div>
         </div>
       </div>
-      <ProductList titleCollection="NEW ARRIVALS" />
+      <ProductList productsData={productsFake} titleCollection="NEW ARRIVALS" />
     </div>
   );
 };

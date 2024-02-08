@@ -1,0 +1,54 @@
+@use "../../theme" as *;
+
+.accordion--info--main--container {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 15px 0;
+  cursor: pointer;
+  .accordion--info--header--container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    svg {
+      font-size: $medium-icon;
+    }
+    strong {
+      font-size: 24px;
+      text-transform: uppercase;
+    }
+    .accordion--open--button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      span {
+        width: 24px;
+        position: absolute;
+        transition: all 0.3s;
+        background-color: $primary-color;
+        height: 4px;
+        &:nth-child(2) {
+          transform: rotateZ(90deg);
+        }
+      }
+      &.open {
+        span {
+          &:nth-child(2) {
+            transform: rotateZ(0);
+          }
+        }
+      }
+    }
+  }
+  .accordion--info--content--container {
+    max-height: 0;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    &.open {
+      max-height: 500px;
+    }
+  }
+}

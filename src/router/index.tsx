@@ -1,3 +1,4 @@
+import ProductDetailsPage from "@/pages/ProductDetails";
 import HomePage from "@pages/Home";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -12,5 +13,12 @@ export const router = createBrowserRouter([
     },
     errorElement: <p>Error Page</p>,
   },
-  
+  {
+    path: "product/:productName",
+    element: <ProductDetailsPage />,
+    loader: ({ params }) => {
+      console.log(params.productName);
+      return "xd";
+    },
+  },
 ]);

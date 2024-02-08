@@ -1,0 +1,31 @@
+@use "../../theme" as *;
+
+.cant--input--main--container {
+  display: grid;
+  width: 100px;
+  height: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid $grey-color;
+  background-color: white;
+  transition: 0.3s;
+  justify-items: center;
+  align-items: center;
+  p {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: $tertiary-color;
+    }
+  }
+  span {
+    padding: 5px;
+  }
+  &:hover {
+    border-color: black;
+  }
+}

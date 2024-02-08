@@ -1,0 +1,48 @@
+@use "../../theme" as *;
+.product--details--template--main--container {
+  background-color: white;
+  padding: 0 40px;
+  padding-bottom: 20px;
+  .product--details--content--container {
+    .product--details--content--body--container {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 40px;
+    }
+
+    .product--details--shopping--content--container {
+      .product--shopping--info--cta--buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .product--details--footer--container {
+        line-height: 40px;
+        span {
+          font-size: 13px;
+        }
+        p {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          svg {
+            font-size: $medium-icon;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .product--details--template--main--container {
+    padding: 10px 20px;
+    .product--details--content--container {
+      .product--details--content--body--container {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+      }
+    }
+  }
+}

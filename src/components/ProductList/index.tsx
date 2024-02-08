@@ -1,13 +1,17 @@
 import { MutableRefObject, useRef } from "react";
 import ProductCard from "../ProductCard";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+import { ProductData } from "@/interfaces";
 import "./index.scss";
+
 interface ProductListProps {
   titleCollection?: string;
+  productsData: ProductData[];
 }
 
 const ProductList = ({
   titleCollection = "Title & Collection",
+  productsData,
 }: ProductListProps) => {
   const carrouselRef = useRef() as MutableRefObject<HTMLDivElement>;
 
@@ -37,13 +41,17 @@ const ProductList = ({
           className="product--list--content--carrousel--container"
         >
           <div className="product--list--content--carrousel">
-            <ProductCard imgSrc="https://romestore.pe/cdn/shop/files/19_64c381b3-bb94-4eda-bab6-7f7085cfd226.png?v=1691430275" />
-            <ProductCard imgSrc="https://romestore.pe/cdn/shop/files/19_64c381b3-bb94-4eda-bab6-7f7085cfd226.png?v=1691430275" />
-            <ProductCard imgSrc="https://romestore.pe/cdn/shop/files/19_64c381b3-bb94-4eda-bab6-7f7085cfd226.png?v=1691430275" />
-            <ProductCard imgSrc="https://romestore.pe/cdn/shop/files/19_64c381b3-bb94-4eda-bab6-7f7085cfd226.png?v=1691430275" />
-            <ProductCard imgSrc="https://romestore.pe/cdn/shop/files/19_64c381b3-bb94-4eda-bab6-7f7085cfd226.png?v=1691430275" />
-            <ProductCard imgSrc="https://romestore.pe/cdn/shop/files/19_64c381b3-bb94-4eda-bab6-7f7085cfd226.png?v=1691430275" />
-            <ProductCard imgSrc="https://romestore.pe/cdn/shop/files/19_64c381b3-bb94-4eda-bab6-7f7085cfd226.png?v=1691430275" />
+            {productsData &&
+              productsData.map((product) => {
+                return (
+                  <ProductCard
+                    key={product.id}
+                    title={product.name}
+                    price={product.price}
+                    imgSrc={product.imgUrls[0]}
+                  />
+                );
+              })}
           </div>
         </div>
       </div>

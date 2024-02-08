@@ -4,29 +4,46 @@ interface ButtonProps {
   textSize?: string;
   icon?: React.ReactNode;
   iconSize?: string;
+  disabled?: boolean;
   styles?: React.CSSProperties;
-  btnClass?: "btn-primary" | "btn-secondary" | "btn-black";
-  onClick(): void;
+  btnClass?: "btn-primary" | "btn-secondary";
+  onClick?(): void;
+  loading?: boolean;
 }
 
 const Button = ({
   text,
   textSize,
+  disabled = false,
   icon,
   iconSize,
   btnClass = "btn-primary",
   onClick,
   styles,
+  loading,
 }: ButtonProps) => {
+  const handleClick = () => {
+    if (!disabled && onClick && !loading) {
+      onClick();
+    }
+  };
+
   return (
     <div
-      onClick={onClick}
-      className={`button_container ${btnClass}`}
+      onClick={handleClick}
+      className={
+        disabled
+          ? `button_container ${btnClass} disabled`
+          : `button_container ${btnClass}`
+      }
       style={styles}
     >
       {text && (
         <div className="button_text_container" style={{ fontSize: textSize }}>
-          <span>{text}</span>
+          <div className={loading ? "text--container" : ""}>
+            <span>{text}</span>
+            {loading && <div className="loading--pulse"></div>}
+          </div>
         </div>
       )}
       {icon && (

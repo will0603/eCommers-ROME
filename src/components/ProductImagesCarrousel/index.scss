@@ -1,0 +1,57 @@
+@use "../../theme.scss" as *;
+
+.product--images--carrousel--main--grid--container {
+  display: block;
+  .product--images--carrousel--grid--content--container {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    img {
+      width: 100%;
+    }
+  }
+}
+.product--images--carrousel--main--slider--container {
+  display: none;
+}
+
+@media (max-width: $tablet) {
+  .product--images--carrousel--main--grid--container {
+    display: none;
+  }
+
+  .product--images--carrousel--main--slider--container {
+    display: block;
+    overflow: hidden;
+    .product--images--carrousel--slider--content--container {
+      display: inline-flex;
+      overflow: visible;
+      transition: all 0.3s;
+      img {
+        width: 100%;
+        padding: 0 10px;
+      }
+    }
+    .product--images--carrousel--slider--dots--container {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      height: 30px;
+      gap: 12px;
+      align-items: center;
+      .product--carrousel--dot {
+        width: 8px;
+        aspect-ratio: 1/1;
+        display: flex;
+        background-color: $grey-color;
+        transition: all 0.2s;
+        border-radius: 100%;
+        cursor: pointer;
+        &.active {
+          background-color: $primary-color;
+          width: 10px;
+        }
+      }
+    }
+  }
+}

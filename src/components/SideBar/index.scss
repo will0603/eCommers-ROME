@@ -25,12 +25,12 @@
     flex-direction: column;
     height: 200px;
     padding: 20px;
-    background-color: $primary-color;
+    background-color: white;
+    border-bottom: 14px solid $primary-color;
     .sidebar_close_icon_container {
       align-self: flex-end;
     }
     .sidebar_username_container {
-      color: white;
       overflow: hidden;
       text-overflow: ellipsis;
       font-weight: 700;

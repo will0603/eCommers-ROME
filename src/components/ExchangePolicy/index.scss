@@ -1,0 +1,11 @@
+.exchange--policy--main--container {
+  display: flex;
+  flex-direction: column;
+  line-height: 30px;
+  font-size: 15px;
+  gap: 20px;
+  ul {
+    list-style: disc;
+    margin-left: 50px;
+  }
+}

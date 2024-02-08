@@ -1,0 +1,36 @@
+@use "../../theme.scss" as *;
+
+.product--shopping--specs--container {
+  .product--shopping--specs--header {
+    display: flex;
+    line-height: 45px;
+    flex-direction: column;
+    padding-bottom: 20px;
+    strong {
+      font-size: 30px;
+      text-transform: uppercase;
+    }
+    border-bottom: 1px solid $grey-color;
+  }
+  .product--shopping--specs--body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 30px;
+    .product--shopping--specs--option {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    p {
+      span {
+        color: grey;
+        text-transform: uppercase;
+      }
+    }
+    .product--shopping--options {
+      display: flex;
+      gap: 10px;
+    }
+  }
+}

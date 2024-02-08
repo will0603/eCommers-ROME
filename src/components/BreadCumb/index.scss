@@ -1,0 +1,41 @@
+@use "../../theme" as *;
+.breadcumb--main--container {
+  display: flex;
+  padding: 20px 0;
+  align-items: center;
+  background-color: white;
+  bottom: 80px;
+  li {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    margin-right: 8px;
+    span {
+      font-size: 13px;
+      color: rgb(102, 102, 102);
+      text-transform: uppercase;
+      transition: all 0.3s;
+      cursor: pointer;
+      &:hover {
+        color: grey;
+      }
+    }
+    svg {
+      color: grey;
+    }
+    &:first-child {
+      span {
+        text-transform: none;
+      }
+    }
+    &:last-child {
+      span {
+        cursor: text;
+        pointer-events: none;
+      }
+      svg {
+        display: none;
+      }
+    }
+  }
+}

@@ -43,7 +43,7 @@ const SideBar = ({ closeSidebar }: SideBarProps) => {
               onClick={closeSidebar}
             ></Button>
           </div>
-          <p className="sidebar_username_container">Hola, Sebastian</p>
+          <p className="sidebar_username_container">Hola, Identificate</p>
         </div>
         <div className="sidebar_navitems_container">
           <SideNavGroupWrapper

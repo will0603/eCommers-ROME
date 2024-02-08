@@ -1,13 +1,19 @@
 @use "../../theme" as *;
 
-@mixin btnProps($btnBgColor, $btnTextColor, $btnIconColor) {
+@mixin btnProps($btnBgColor, $btnTextColor, $btnBorderColor) {
   background-color: $btnBgColor;
+  border-color: $btnBorderColor;
   .button_text_container {
     color: $btnTextColor;
+    .text--container {
+      .loading--pulse {
+        background-color: $btnTextColor;
+      }
+    }
   }
   .button_icon_container {
     svg {
-      color: $btnIconColor;
+      color: $btnBorderColor;
     }
   }
 }
@@ -15,39 +21,76 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
-  border-radius: 5px;
+  padding: 10px;
   transition: all 0.4s;
+  border: 1px solid transparent;
+  position: relative;
   gap: 10px;
   cursor: pointer;
   .button_text_container {
     font-weight: 500;
+    text-transform: uppercase;
+    font-size: 14px;
+    .text--container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        opacity: 0;
+      }
+      .loading--pulse {
+        width: 20%;
+        position: absolute;
+        height: 3px;
+        animation: transport 1s infinite;
+      }
+    }
   }
   .button_icon_container {
     display: flex;
     align-items: center;
   }
   &.btn-primary {
-    @include btnProps($primary-color, $secondary-color, $secondary-color);
+    @include btnProps($primary-color, $secondary-color, $primary-color);
     &:hover {
-      background-color: $secondary-color;
-      span {
-        color: $primary-color;
-      }
-      .button_icon_container {
-        svg {
-          color: $primary-color;
-        }
-      }
+      filter: opacity(85%);
     }
   }
   &.btn-secondary {
     @include btnProps($secondary-color, $primary-color, $primary-color);
     &:hover {
-      filter: brightness(92%);
+      filter: brightness(85%);
     }
   }
-  &.btn-black {
-    @include btnProps($black-color, $secondary-color, $secondary-color);
+  &.disabled {
+    filter: opacity(85%);
+    pointer-events: none;
+  }
+  &:has(.loading--pulse) {
+    animation: pulse 1s forwards;
+    pointer-events: none;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    filter: opacity(90%);
+  }
+  50% {
+    filter: opacity(95%);
+  }
+  100% {
+    filter: opacity(90%);
+  }
+}
+@keyframes transport {
+  0% {
+    width: 20%;
+  }
+  50% {
+    width: 30%;
+  }
+  100% {
+    width: 20%;
   }
 }

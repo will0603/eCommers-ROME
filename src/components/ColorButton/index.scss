@@ -1,0 +1,32 @@
+@use "../../theme" as *;
+
+.color--button--main--container {
+  width: 32px;
+  aspect-ratio: 1/1;
+  background-color: white;
+  border-radius: 100%;
+  border: 1px solid $grey-color;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  .color--button--colour--container {
+    aspect-ratio: 1/1;
+    margin: 3px;
+    border-radius: 100%;
+  }
+  .color--button--colour--disabled {
+    position: absolute;
+    width: 90%;
+    align-self: center;
+    height: 2px;
+    background-color: $grey-color;
+  }
+  &.selected {
+    box-shadow: inset 0 0 0 1px black;
+    border-color: black;
+    .color--button--colour--container {
+      margin: 4px;
+    }
+  }
+}

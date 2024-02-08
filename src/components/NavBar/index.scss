@@ -1,7 +1,7 @@
 @use "../../theme.scss" as *;
 
 .navbar_main_container {
-  background-color: white;
+  background-color: $primary-color;
   display: flex;
   justify-content: space-between;
   gap: 10px;
@@ -13,6 +13,7 @@
     width: 200px;
     display: flex;
     align-items: center;
+    cursor: pointer;
     img {
       width: 100%;
       height: 100%;
@@ -23,5 +24,23 @@
     display: flex;
     align-items: center;
     gap: 15px;
+  }
+  &.sticky {
+    position: fixed;
+    z-index: 10;
+    animation: appeareance 0.3s linear;
+    left: 0;
+    right: 0;
+    & ~ .main_content_container {
+      border-top: 80px solid $primary-color;
+    }
+  }
+}
+@keyframes appeareance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
