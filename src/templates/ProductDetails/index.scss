@@ -11,6 +11,17 @@
     }
 
     .product--details--shopping--content--container {
+      .product--shopping--specs--header {
+        display: flex;
+        line-height: 45px;
+        flex-direction: column;
+        padding-bottom: 20px;
+        strong {
+          font-size: 30px;
+          text-transform: uppercase;
+        }
+        border-bottom: 1px solid $grey-color;
+      }
       .product--shopping--info--cta--buttons {
         display: flex;
         flex-direction: column;

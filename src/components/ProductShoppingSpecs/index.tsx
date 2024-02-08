@@ -6,16 +6,12 @@ import "./index.scss";
 
 interface ProductShoppingSpecsProps {
   currentSpecs: ProductOnCart;
-  productName?: string;
-  productPrice?: number;
   onChangeSpecs(field: string, value: string | number): void;
   colorVariants: ProductColor[];
   sizeVariants: string[];
 }
 
 const ProductShoppingSpecs = ({
-  productName = "ACTIVE ZERO SLEEVE R HOODIE",
-  productPrice = 89,
   onChangeSpecs,
   currentSpecs,
   colorVariants,
@@ -28,10 +24,6 @@ const ProductShoppingSpecs = ({
   };
   return (
     <div className="product--shopping--specs--container">
-      <div className="product--shopping--specs--header">
-        <strong>{productName}</strong>
-        <span>S./.{productPrice?.toFixed(2)}</span>
-      </div>
       <div className="product--shopping--specs--body">
         <div className="product--shopping--specs--option">
           <p>

@@ -55,8 +55,6 @@ const ProductDetails = ({
     });
   };
 
-  console.log({ productSpecs });
-
   return (
     <div className="product--details--template--main--container">
       <div className="product--details--content--container content--container">
@@ -64,11 +62,13 @@ const ProductDetails = ({
         <div className="product--details--content--body--container">
           <ProductImagesCarrousel productImages={imgsProduct || []} />
           <div className="product--details--shopping--content--container">
+            <div className="product--shopping--specs--header">
+              <strong>{nameProduct}</strong>
+              <span>S./.{priceProduct?.toFixed(2)}</span>
+            </div>
             <ProductShoppingSpecs
               onChangeSpecs={(field, value) => handleChangeInfo(field, value)}
               currentSpecs={productSpecs}
-              productName={nameProduct}
-              productPrice={priceProduct}
               colorVariants={variantsInfo?.allColors}
               sizeVariants={variantsInfo?.allSizes}
             />

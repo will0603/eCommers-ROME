@@ -35,7 +35,6 @@ const ProductList = ({
             <GoArrowRight onClick={() => scrollToRigth()} />
           </div>
         </div>
-
         <div
           ref={carrouselRef}
           className="product--list--content--carrousel--container"
