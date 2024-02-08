@@ -3,6 +3,8 @@ import CantInput from "../CantInput";
 import { ProductOnCart } from "@/interfaces";
 import { useDispatch } from "react-redux";
 import { removeProductFromCart, setProductFromCart } from "@/redux/actions";
+import { useNavigate } from "react-router-dom";
+import { urlEncoded } from "@/helpers";
 
 const CartItem = ({ product }: { product: ProductOnCart }) => {
   const {
@@ -14,6 +16,8 @@ const CartItem = ({ product }: { product: ProductOnCart }) => {
     cantProduct,
   } = product;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const urlForParam = urlEncoded(product?.nameProduct);
 
   const handleMinus = () => {
     if (cantProduct !== 1) {
@@ -29,7 +33,10 @@ const CartItem = ({ product }: { product: ProductOnCart }) => {
 
   return (
     <div className="cart--item--main--container">
-      <div className="cart--item--image--container">
+      <div
+        className="cart--item--image--container"
+        onClick={() => navigate(`/product/${urlForParam}`)}
+      >
         <img src={imgProduct}></img>
       </div>
       <div className="cart--item--layout--container">

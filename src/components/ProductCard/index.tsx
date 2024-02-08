@@ -15,12 +15,13 @@ const ProductCard = ({
   imgSrc = "",
 }: ProductCardProps) => {
   const navigate = useNavigate();
+  const urlForParam = urlEncoded(title);
 
   return (
     <div className="product--card--container">
       <div
         className="product--card--image--container"
-        onClick={() => navigate(`/product/${urlEncoded(title)}`)}
+        onClick={() => navigate(`/product/${urlForParam}`)}
       >
         <img src={imgSrc || Product}></img>
       </div>

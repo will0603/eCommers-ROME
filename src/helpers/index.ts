@@ -47,7 +47,7 @@ export const getOnceVariantsFromProduct = (
 
 export const urlEncoded = (word: string | undefined): string => {
   if (word) {
-    const toUri = encodeURIComponent(word);
+    const toUri = word.replace(/ /g, "-");
     return toUri;
   }
   return "";
@@ -55,7 +55,7 @@ export const urlEncoded = (word: string | undefined): string => {
 
 export const urlDecoded = (word: string | undefined): string => {
   if (word) {
-    const fromUri = decodeURIComponent(word);
+    const fromUri = word.replace(/-/g, " ");
     return fromUri;
   }
   return "";

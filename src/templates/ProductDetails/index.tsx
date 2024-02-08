@@ -1,5 +1,4 @@
 import Button from "@/components/Button";
-import "./index.scss";
 import ProductImagesCarrousel from "@/components/ProductImagesCarrousel";
 import ProductShoppingSpecs from "@/components/ProductShoppingSpecs";
 import { GoShieldCheck } from "react-icons/go";
@@ -11,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { addProductToCart } from "@/redux/actions";
 import { ProductOnCart, ProductVariant } from "@/interfaces";
 import { getOnceVariantsFromProduct } from "@/helpers";
+import "./index.scss";
 
 interface ProductDetailsProps {
   id: number;
