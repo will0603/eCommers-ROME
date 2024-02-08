@@ -51,7 +51,11 @@ const ProductImagesCarrousel = ({
         <div className="product--images--carrousel--grid--content--container">
           {productImages &&
             productImages.map((image, index) => {
-              return <img src={image} key={index}></img>;
+              return (
+                <div className="product--image--container" key={index}>
+                  <img src={image}></img>
+                </div>
+              );
             })}
         </div>
       </div>

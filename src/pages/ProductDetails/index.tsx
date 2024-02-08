@@ -18,6 +18,7 @@ const ProductDetailsPage = () => {
     if (productOnParams) {
       setCurrentProduct(productOnParams[0]);
     }
+    console.log("SE ha refresh");
   }, [params]);
 
   return (
