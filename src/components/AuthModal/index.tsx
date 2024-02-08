@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./index.scss";
 import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
 import LoginForm from "../LoginForm";

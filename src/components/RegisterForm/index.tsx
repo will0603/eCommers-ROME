@@ -1,7 +1,6 @@
 import { initialValuesRegisterForm } from "@/interfaces/initials";
 import { registerFormSchema } from "@/schemas";
 import { Formik } from "formik";
-import React from "react";
 import InputForm from "../InputForm";
 import Button from "../Button";
 import "./index.scss";
